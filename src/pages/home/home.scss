@@ -1,0 +1,41 @@
+.contentor{
+    background-color: #404040;
+}
+
+.ionItem{
+    background-color: #404040;
+}
+
+button .settings{
+    zoom: 1.2;
+    color: #ff4000;
+}
+
+button .productInfoBtn{
+    zoom: 2;
+    
+}
+
+button:hover .settings{
+    color: #ff8000;
+}
+
+.btnLecitar{
+    margin: 0 auto; 
+    margin-top: 15px; 
+    border-radius: 4px; 
+    text-align: center; 
+    font-size: 18px;
+    width:100px;
+    background-color: #66b3ff;
+}
+
+.timeLeftDiv{
+    width: 60px;
+    height: 100%;
+    float: left;
+}
+
+.productInfoDiv{
+    margin-left: 60px;
+}

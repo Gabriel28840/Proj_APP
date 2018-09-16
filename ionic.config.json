@@ -1,0 +1,7 @@
+{
+  "name": "bidder",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
