@@ -1,8 +1,9 @@
-Como compilar e correr:
-	- é necessário estar na pasta raiz do projeto
-	- usar o terminal e escrever "ionic serve"
+#Commands To Compile and Run
+- Open Terminal on Folder of Project
+- run command: ionic serve
 
-#Commands
-
-# Install Ionic
->>>>>>> d5761e0c34c75dcfd565f13d70ebecfe598f064e
+# Install Ionic and Other things
+- Install npm
+- Open Terminal on Folder of Project
+- run command: npm install -g ionic
+- run command: npm install -f
