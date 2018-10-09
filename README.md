@@ -18,3 +18,10 @@ The behaviour of the 5 tabs will be:
 	( Acho que 5 minutos é muito, acho que ganhamos mais com pequenas publicidades)
 	(20 segundos - 1 token)
 	(5 minutos: 300 segundos = 15 tokens)
+	
+	
+# Temos que adotar
+https://getbootstrap.com/docs/4.0/layout/grid/
+Nos elementos
+
+# Temos que organizar a estrutura para reutilizar coisas e código ficar mais clear
