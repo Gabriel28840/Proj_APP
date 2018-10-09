@@ -15,3 +15,6 @@ The behaviour of the 5 tabs will be:
 	Third tab  - Check which bets are still open (and more)
 	Forth tab  - Discount possibilities (ex: 100 bids = 5%-15% discount in some shop)
 	Fifth tab  - Ads (If the user watchs 5 min of ads = 20 tokens to bid in the app)
+	( Acho que 5 minutos é muito, acho que ganhamos mais com pequenas publicidades)
+	(20 segundos - 1 token)
+	(5 minutos: 300 segundos = 15 tokens)
