@@ -4,7 +4,6 @@ import { AlertController } from 'ionic-angular';
 
 import { SettingsPage } from '../settings/settings';
 
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
