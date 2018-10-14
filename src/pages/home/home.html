@@ -19,7 +19,7 @@
 
 <ion-content class="contentor" padding>
 
-    <ion-list [virtualScroll]="listaDados" >
+    <ion-list [virtualScroll]="products" >
         <ion-item *virtualItem="let item" class="ionItem">
           <div>
 
@@ -31,12 +31,14 @@
             </div>
 
             <div class="productInfoDiv">
-              <h2 style="text-align: center; font-size: 19px; margin-bottom: 20px;">{{item.primeiroNome}}</h2>
+              <h2 style="text-align: center; font-size: 19px; margin-bottom: 20px;">{{item.product_name}}</h2>
               <div style="width: 200px; height: 150px; margin: 0 auto;">
                   <img (click) = "infoProduto()" src = "assets/imgs/pc.png" alt="logo image">
               </div>
 
-              <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">user name do apostador</h2>
+              <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">{{item.last_punter}}</h2>
+
+              <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">São precisos : {{item.required_tokens}} Tokens</h2>
 
               <!--<div (click) = "licitar()" class = "btnLecitar">Licitar</div>-->
               <circle-element></circle-element>

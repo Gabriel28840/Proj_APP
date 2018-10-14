@@ -1,8 +1,11 @@
+/** Model */
+import { ProductModel } from './product.model';
+
 export class ProductDetailModel {
+
   constructor(
-      public id: String, 
-      public name: String,
-      public description: String,
-      public imagem: String
+    public product: ProductModel, 
+    public product_description: String
   ) {}
+
 }

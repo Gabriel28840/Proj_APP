@@ -6,25 +6,39 @@ import { AlertController } from 'ionic-angular';
 import { SettingsPage } from '../settings/settings';
 import { ProductDetailPage } from '../product-detail/product-detail';
 
+/** Models */
+import { ProductModel } from '../shared/models/product.model';
+
+/** Services */
+import { ProductService } from '../shared/services/product.service';
+
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [ProductService]
 })
 
 export class HomePage {
   current : any;
   max : any;
-  listaDados : any;
   timeLeftCircleColor : any;
   detailproduct: boolean = false;
 
-  constructor(public _navController: NavController, private alertCtrl: AlertController) {
+  /** list of products to show */
+  products: ProductModel[] = []
+
+  constructor(
+      private _navController: NavController,
+      private alertCtrl: AlertController,
+      private _product_service: ProductService
+  ) {
     this.current = 100;
     this.max = 100;
-    this.listaDados = [{primeiroNome: "Computador XXY", ultimoNome: "B"}, {primeiroNome: "Televisão XWE", ultimoNome: "D"},
-                      {primeiroNome: "Televisão AAA", ultimoNome: "Z"}, {primeiroNome: "Relógio UYT", ultimoNome: "T"}];
     this.timeLeftCircleColor = "orange";
+
+    /** get products */
+    this.products = this._product_service.getListOfProducts();
   }
 
   decrementa(){

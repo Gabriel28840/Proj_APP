@@ -12,7 +12,7 @@ import { ProductModel } from '../models/product.model';
 /** EXMAPLE ONLY*/
 
 @Injectable()
-export class ProductPageService {
+export class ProductDetaiService {
 
     /** auxiliar variables */
     http: Http = null;
@@ -21,9 +21,9 @@ export class ProductPageService {
     timeout: number = 0;
 
     /** Constructor */
-    constructor(private _http: Http, private _httpManager: HttpManager) {  
-        this.http = _http; 
-        /** HttpManager */
+    constructor(private _httpManager: HttpManager) {  
+
+      /** HttpManager */
         this.headers = _httpManager.getHeader;
         this.urlApi = _httpManager.getUrlApi;
         this.timeout = _httpManager.getTimeout;
@@ -63,13 +63,17 @@ export class ProductPageService {
             new ProductModel(
               met.id,
               met.short_name,
-              met.long_name
+              met.long_name,
+              met.a,
+              met.b,
+              met.c,
+              met.p
             ));
         });
         
       }
 
-      return new ProductModel('1','1','1');
+      return new ProductModel(1,'1','1',1,1,'1',1);
       
     }
 }

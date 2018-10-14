@@ -18,7 +18,8 @@ import { ProductDetailPage } from '../pages/product-detail/product-detail';
 
 /** SERVICES */
 import { HttpManager } from '../pages/shared/http.manager';
-import { ProductPageService } from '../pages/shared/services/product-page.service';
+import { ProductService } from '../pages/shared/services/product.service';
+import { ProductDetaiService } from '../pages/shared/services/product-detail.service';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { ProductPageService } from '../pages/shared/services/product-page.servic
     SplashScreen,
     /** Services */
     HttpManager,
-    ProductPageService
+    ProductService,
+    ProductDetaiService
   ]
 })
 export class AppModule {}
