@@ -22,12 +22,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    SettingsPage
+    SettingsPage,
+    CircleElement
   ],
   imports: [
     BrowserModule,
     RoundProgressModule,
     IonicModule.forRoot(MyApp)
+  ],
+  exports: [
+    CircleElement
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -36,8 +40,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    SettingsPage,
-    CircleElement
+    SettingsPage
   ],
   providers: [
     StatusBar,
