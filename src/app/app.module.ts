@@ -1,28 +1,34 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { RoundProgressModule } from 'angular-svg-round-progressbar';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-import { SettingsPage } from '../pages/settings/settings';
-
-import { CircleElement } from '../pages/circle/circle';
-
+/** Ionic Elements */
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+/** Component Elements */
+import { CircleElement } from '../pages/elements/circle/circle';
+
+/** PAGES */
+import { HomePage } from '../pages/home/home';
+import { SettingsPage } from '../pages/settings/settings';
+import { ProductDetailPage } from '../pages/product-detail/product-detail';
+
+/** SERVICES */
+import { HttpManager } from '../pages/shared/http.manager';
+import { ProductPageService } from '../pages/shared/services/product-page.service';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    /** Pages */
     HomePage,
-    TabsPage,
     SettingsPage,
+    ProductDetailPage,
+    /** Elements */
     CircleElement
   ],
   imports: [
@@ -31,21 +37,24 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     IonicModule.forRoot(MyApp)
   ],
   exports: [
+    /** Elements */
     CircleElement
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    /** Pages */
     HomePage,
-    TabsPage,
-    SettingsPage
+    SettingsPage,
+    ProductDetailPage
   ],
   providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    /** Services */
+    HttpManager,
+    ProductPageService
   ]
 })
 export class AppModule {}

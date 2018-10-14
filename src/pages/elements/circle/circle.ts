@@ -4,5 +4,6 @@ import { Component } from '@angular/core';
   selector: 'circle-element',
   templateUrl: 'circle.html'
 })
+
 export class CircleElement {
 }

@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row>
+          <ion-col width-22 (click)="backPage()"> 
+            <!--<img item-left class="question" src="./assets/question.svg" (click)="aboutApplication()" /> -->
+            About app (CLICK)
+          </ion-col>
+          <ion-col width-66>
+            <ion-title>
+              <!-- <img class="logo" src="./assets/icon.png" /> -->
+              Leiloa
+            </ion-title>
+          </ion-col>
+          <ion-col width-22>
+            <!-- <img item-right class="logout" src="./assets/logout.svg" (click)="exitApp()"/> -->
+            Image to Exit
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content *ngIf="!loaded">
+  
+    <div class="vertical-align-content-refresh">
+        <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+    </div>
+  
+  </ion-content>
+  
+  <ion-content padding *ngIf="loaded">
+    
+    <ion-grid>
+        <ion-row wrap>
+          <!--
+          <ion-col width-33 *ngFor="let dim of dimensions">
+  
+            <ion-card on-tap="selectedDimension(dim)">
+              <img src="{{dim.dimensionImage}}" />
+              <ion-card-content>
+                <ion-card-title>
+                  <div> {{ dim.dimensionShort }} </div>
+                </ion-card-title>
+              </ion-card-content>
+            </ion-card>
+  
+          </ion-col>
+          -->
+      HELLO
+        </ion-row>
+    </ion-grid>
+  
+  </ion-content>

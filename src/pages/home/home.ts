@@ -2,19 +2,24 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
+/** Pages */
 import { SettingsPage } from '../settings/settings';
+import { ProductDetailPage } from '../product-detail/product-detail';
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
   current : any;
   max : any;
   listaDados : any;
   timeLeftCircleColor : any;
+  detailproduct: boolean = false;
 
-  constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
+  constructor(public _navController: NavController, private alertCtrl: AlertController) {
     this.current = 100;
     this.max = 100;
     this.listaDados = [{primeiroNome: "Computador XXY", ultimoNome: "B"}, {primeiroNome: "Televisão XWE", ultimoNome: "D"},
@@ -35,11 +40,16 @@ export class HomePage {
 
 
   openSettings(){
-    this.navCtrl.push(SettingsPage);
+    this._navController.push(SettingsPage);
   }
 
 
   infoProduto(){
+    this._navController.push(ProductDetailPage);
+  }
+
+  infoProdutoLast(){
+
     let alert = this.alertCtrl.create({
 
       cssClass: 'appsMenu',

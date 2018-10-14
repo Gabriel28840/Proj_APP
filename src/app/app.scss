@@ -23,11 +23,5 @@
 /*.scroll-content{//esconder o scroll e so mostrar quando necessário
     overflow-y: auto; // or "overflow: auto;"
 }*/
-
-.tabs-md .tab-button[aria-selected=true] .tab-button-icon { //tabs android
-    color: #FAAC58 !important;
-}
-  
-.tabs-ios .tab-button[aria-selected=true] .tab-button-icon {//tabs ios
-    color: #FAAC58 !important;
-}
+$color_background: #D0E5D1;
+$color_background_header: #C0C0C0;
