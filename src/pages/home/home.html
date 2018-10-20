@@ -17,35 +17,67 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="contentor" padding>
+<ion-content padding>
 
     <ion-list [virtualScroll]="products" >
         <ion-item *virtualItem="let item" class="ionItem">
-          <div>
+          
+          <ion-grid>
+            <ion-row wrap>
 
-            <div class="timeLeftDiv"> 
-              <round-progress style="margin: 90px auto 0 auto;" (click) = "decrementa()" [current]="current"
-              [radius]="20" [color]="timeLeftCircleColor" 
-              [stroke]="5" [max]="max"></round-progress>
-              <h2 style="text-align: center;">{{current}}</h2>
-            </div>
+              <!-- Product Right: is odd -->
 
-            <div class="productInfoDiv">
-              <h2 style="text-align: center; font-size: 19px; margin-bottom: 20px;">{{item.product_name}}</h2>
-              <div style="width: 200px; height: 150px; margin: 0 auto;">
-                  <img (click) = "infoProduto()" src = "assets/imgs/pc.png" alt="logo image">
-              </div>
+                <ion-col width-66 *ngIf="is_odd(item.product_id)">
 
-              <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">{{item.last_punter}}</h2>
+                    <h2 style="text-align: center; font-size: 19px; margin-bottom: 20px;">{{item.product_name}}</h2>
+                    
+                    <div style="width: 200px; height: 150px; margin: 0 auto;">
+                        <img (click) = "infoProduto()" src = "assets/imgs/pc.png" alt="logo image">
+                    </div>
+      
+                    <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">{{item.last_punter}}</h2>
+                    <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">São precisos : {{item.required_tokens}} Tokens</h2>
 
-              <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">São precisos : {{item.required_tokens}} Tokens</h2>
+                </ion-col>
+              
+              <ion-col width-33 *ngIf="is_odd(item.product_id)">
+                Tempo restante
+                <round-progress style="margin: 90px auto 0 auto;" (click) = "decrementa()" [current]="current"
+                    [radius]="20" [color]="timeLeftCircleColor" 
+                    [stroke]="5" [max]="max"></round-progress>
+                    <h2 style="text-align: center;">{{current}}</h2>
+                    <!--<circle-element></circle-element>-->
+                </ion-col>
 
-              <!--<div (click) = "licitar()" class = "btnLecitar">Licitar</div>-->
-              <circle-element></circle-element>
-            </div>
 
-        </div>
-        </ion-item>
-      </ion-list>
+                <!-- Product Left: is even -->
+
+              <ion-col width-33 *ngIf="is_even(item.product_id)">
+                Tempo restante
+                <round-progress style="margin: 90px auto 0 auto;" (click) = "decrementa()" [current]="current"
+                    [radius]="20" [color]="timeLeftCircleColor" 
+                    [stroke]="5" [max]="max"></round-progress>
+                    <h2 style="text-align: center;">{{current}}</h2>
+                    <!--<circle-element></circle-element>-->
+              </ion-col>
+
+              <ion-col width-66 *ngIf="is_even(item.product_id)">
+
+                    <h2 style="text-align: center; font-size: 19px; margin-bottom: 20px;">{{item.product_name}}</h2>
+                    
+                    <div style="width: 200px; height: 150px; margin: 0 auto;">
+                        <img (click) = "infoProduto()" src = "assets/imgs/pc.png" alt="logo image">
+                    </div>
+      
+                    <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">{{item.last_punter}}</h2>
+                    <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">São precisos : {{item.required_tokens}} Tokens</h2>
+
+              </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </ion-item>
+</ion-list>
       
 </ion-content>

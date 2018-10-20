@@ -25,6 +25,8 @@ export class HomePage {
   timeLeftCircleColor : any;
   detailproduct: boolean = false;
 
+  odd: boolean = true;
+
   /** list of products to show */
   products: ProductModel[] = []
 
@@ -50,6 +52,13 @@ export class HomePage {
   licitar(){
     this.current = 100;
     this.timeLeftCircleColor = "orange";
+  }
+
+  is_odd(product_id: any){
+    return product_id % 2 == 1;
+  }
+  is_even(product_id: any){
+    return product_id % 2 == 0;
   }
 
 
