@@ -21,6 +21,8 @@
 
     <ion-list [virtualScroll]="products" >
         <ion-item *virtualItem="let item" class="ionItem">
+
+            <product-card [product]="item"></product-card>
           
           <ion-grid>
             <ion-row wrap>

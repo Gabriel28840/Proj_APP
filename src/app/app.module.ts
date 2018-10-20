@@ -10,6 +10,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 /** Component Elements */
 import { CircleElement } from '../pages/elements/circle/circle';
+import { ProductCard } from '../pages/elements/product-card/product-card';
 
 /** PAGES */
 import { HomePage } from '../pages/home/home';
@@ -30,7 +31,8 @@ import { ProductDetaiService } from '../pages/shared/services/product-detail.ser
     SettingsPage,
     ProductDetailPage,
     /** Elements */
-    CircleElement
+    CircleElement,
+    ProductCard
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { ProductDetaiService } from '../pages/shared/services/product-detail.ser
   ],
   exports: [
     /** Elements */
-    CircleElement
+    CircleElement,
+    ProductCard
   ],
   bootstrap: [IonicApp],
   entryComponents: [
