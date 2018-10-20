@@ -33,13 +33,13 @@ export class ProductService {
       var products: ProductModel[] = [];
 
       products.push(
-        new ProductModel(1,'tv lcd', 'photo', 10, 1, 'antonios', 12)
+        new ProductModel(1,'tv lcd', 'photo', 17, 1, 'antonios', 12)
       )
       products.push(
-        new ProductModel(2,'modem Nos', 'photo2', 120, 12, 'george', 22)
+        new ProductModel(2,'modem Nos', 'photo2', 60, 12, 'george', 22)
       )
       products.push(
-        new ProductModel(3,'monitor antigo', 'photo3', 110, 13, 'gans', 5)
+        new ProductModel(3,'monitor antigo', 'photo3', 55, 13, 'gans', 5)
       )
 
 

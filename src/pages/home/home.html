@@ -42,10 +42,10 @@
               
               <ion-col width-33 *ngIf="is_odd(item.product_id)">
                 Tempo restante
-                <round-progress style="margin: 90px auto 0 auto;" (click) = "decrementa()" [current]="current"
+                <round-progress style="margin: 90px auto 0 auto;" (click) = "licitar()" [current]="currentTime"
                     [radius]="20" [color]="timeLeftCircleColor" 
-                    [stroke]="5" [max]="max"></round-progress>
-                    <h2 style="text-align: center;">{{current}}</h2>
+                    [stroke]="5" [max]="maxTime"></round-progress>
+                    <h2 style="text-align: center;">{{currentTime}}</h2>
                     <!--<circle-element></circle-element>-->
                 </ion-col>
 
@@ -54,10 +54,10 @@
 
               <ion-col width-33 *ngIf="is_even(item.product_id)">
                 Tempo restante
-                <round-progress style="margin: 90px auto 0 auto;" (click) = "decrementa()" [current]="current"
+                <round-progress style="margin: 90px auto 0 auto;" (click) = "licitar()" [current]="currentTime"
                     [radius]="20" [color]="timeLeftCircleColor" 
-                    [stroke]="5" [max]="max"></round-progress>
-                    <h2 style="text-align: center;">{{current}}</h2>
+                    [stroke]="5" [max]="maxTime"></round-progress>
+                    <h2 style="text-align: center;">{{currentTime}}</h2>
                     <!--<circle-element></circle-element>-->
               </ion-col>
 

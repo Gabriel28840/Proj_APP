@@ -20,8 +20,10 @@ import { ProductService } from '../shared/services/product.service';
 })
 
 export class HomePage {
-  current : any;
-  max : any;
+
+  /** variables about time ( time to bet ) */
+  currentTime: any;
+  maxTime : any;
   timeLeftCircleColor : any;
   detailproduct: boolean = false;
 
@@ -30,27 +32,38 @@ export class HomePage {
   /** list of products to show */
   products: ProductModel[] = []
 
-  constructor(
-      private _navController: NavController,
-      private alertCtrl: AlertController,
-      private _product_service: ProductService
-  ) {
-    this.current = 100;
-    this.max = 100;
+  constructor( private _navController: NavController, private alertCtrl: AlertController, private _product_service: ProductService ) 
+  {
+    /** Initialize time countdown */
+    this.currentTime = 60;
+    this.maxTime = 60;
+    this.startTimer();
+
+    /** others */
     this.timeLeftCircleColor = "orange";
 
     /** get products */
     this.products = this._product_service.getListOfProducts();
   }
 
-  decrementa(){
-    this.current -= 1;
-    if(this.current < 25)
-      this.timeLeftCircleColor = "red";
-  }
+  /** Countdown */
+  startTimer(){
+    setTimeout(x => 
+      {
+          if( this.currentTime > 0 ) {
+            this.currentTime -= 1;
+            this.startTimer();
+          }
+
+          if(this.currentTime < 25) { 
+            this.timeLeftCircleColor = "red"; 
+          }
+
+      }, 1000);
+    }
 
   licitar(){
-    this.current = 100;
+    this.currentTime = 60;
     this.timeLeftCircleColor = "orange";
   }
 
