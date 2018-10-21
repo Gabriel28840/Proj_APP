@@ -1,4 +1,8 @@
 import { Component, Input } from '@angular/core';
+import { NavController } from 'ionic-angular';
+
+/** Pages */
+import { ProductDetailPage } from '../../product-detail/product-detail';
 
 /** Models */
 import { ProductModel } from '../../shared/models/product.model';
@@ -23,7 +27,7 @@ export class ProductCard {
     timeLeftCircleColor : any;
 
     /** Initialize Variables */
-    constructor() {
+    constructor(private _navController: NavController) {
       
       /** Initialize time countdown */
       this.currentTime = 60;
@@ -52,8 +56,12 @@ export class ProductCard {
 
     /** Bet - Participar no leilão */
     to_bet(){
-      this.currentTime = 60;
-      this.timeLeftCircleColor = "orange";
+      
+      if(this.currentTime > 0) {
+        this.currentTime = 60;
+        this.timeLeftCircleColor = "orange";
+      }
+
     }
 
     /** Position of product on aplication */
@@ -65,6 +73,15 @@ export class ProductCard {
     /** left */
     is_even(){
       return this.position_number%2 == 0
+    }
+
+    /** Info Product */
+    infoProduto(){
+      this._navController.push(ProductDetailPage, 
+            {
+              product_id: this.product.product_id
+          }
+        );
     }
 
 }

@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
 
 /** Pages */
 import { SettingsPage } from '../settings/settings';
-import { ProductDetailPage } from '../product-detail/product-detail';
 
 /** Models */
 import { ProductModel } from '../shared/models/product.model';
@@ -27,8 +25,7 @@ export class HomePage {
 
   /** constructor */
   constructor( 
-                private _navController: NavController, 
-                private alertCtrl: AlertController, 
+                private _navController: NavController,
                 private _product_service: ProductService
               ) {
 
@@ -37,43 +34,10 @@ export class HomePage {
 
   }
 
-  
-  /** Functions to navagate */
   /** Settings */
   openSettings(){
      this._navController.push(SettingsPage);
   }
 
-  /** Info Product */
-  infoProduto(){
-     this._navController.push(ProductDetailPage);
-  }
-
-  infoProdutoLast(){
-
-    let alert = this.alertCtrl.create({
-
-      cssClass: 'appsMenu',
-      title: 'Informação do produto',
-      subTitle: 'Informações sobre os produtos em manutenção',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: data => {
-            console.log('cancel clicked');
-          }
-        },
-        {
-          text: 'Ok',
-          cssClass: 'btnOK',
-          handler: () => {
-            console.log('Ok clicked');
-          }
-        }
-      ]
-    });
-    alert.present();     
-  }
 
 }
