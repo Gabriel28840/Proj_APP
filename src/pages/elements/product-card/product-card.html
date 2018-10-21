@@ -1,2 +1,52 @@
-Hello! Test!
-{{ product.product_name}}
+<ion-grid>
+        <ion-row wrap>
+
+          <!-- Product Right: is odd -->
+
+            <ion-col width-66 *ngIf="is_even()">
+
+                <h2 style="text-align: center; font-size: 19px; margin-bottom: 20px;">{{product.product_name}}</h2>
+                
+                <div style="width: 200px; height: 150px; margin: 0 auto;">
+                    <img (click) = "infoProduto()" src = "assets/imgs/pc.png" alt="logo image">
+                </div>
+  
+                <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">{{product.last_punter}}</h2>
+                <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">São precisos : {{product.required_tokens}} Tokens</h2>
+
+            </ion-col>
+          
+          <ion-col width-33 *ngIf="is_even()">
+            Tempo restante
+            <round-progress style="margin: 90px auto 0 auto;" (click) = "to_bet()" [current]="currentTime"
+                [radius]="20" [color]="timeLeftCircleColor" 
+                [stroke]="5" [max]="maxTime"></round-progress>
+                <h2 style="text-align: center;">{{currentTime}}</h2>
+                <!--<circle-element></circle-element>-->
+            </ion-col>
+
+            <!-- Product Left: is even -->
+              
+              <ion-col width-33 *ngIf="is_odd()">
+                Tempo restante
+                <round-progress style="margin: 90px auto 0 auto;" (click) = "to_bet()" [current]="currentTime"
+                    [radius]="20" [color]="timeLeftCircleColor" 
+                    [stroke]="5" [max]="maxTime"></round-progress>
+                    <h2 style="text-align: center;">{{currentTime}}</h2>
+                    <!--<circle-element></circle-element>-->
+                </ion-col>
+
+                <ion-col width-66 *ngIf="is_odd()">
+
+                        <h2 style="text-align: center; font-size: 19px; margin-bottom: 20px;">{{product.product_name}}</h2>
+                        
+                        <div style="width: 200px; height: 150px; margin: 0 auto;">
+                            <img (click) = "infoProduto()" src = "assets/imgs/pc.png" alt="logo image">
+                        </div>
+          
+                        <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">{{product.last_punter}}</h2>
+                        <h2 style="text-align: center; font-size: 9pt; margin-top: 20px;">São precisos : {{product.required_tokens}} Tokens</h2>
+        
+                    </ion-col>
+  </ion-row>
+</ion-grid>

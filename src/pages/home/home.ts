@@ -12,76 +12,41 @@ import { ProductModel } from '../shared/models/product.model';
 /** Services */
 import { ProductService } from '../shared/services/product.service';
 
-
+/** Component */
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
   providers: [ProductService]
 })
 
+/** Class */
 export class HomePage {
 
-  /** variables about time ( time to bet ) */
-  currentTime: any;
-  maxTime : any;
-  timeLeftCircleColor : any;
-  detailproduct: boolean = false;
-
-  odd: boolean = true;
-
-  /** list of products to show */
+  /** list of products to show to the user */
   products: ProductModel[] = []
 
-  constructor( private _navController: NavController, private alertCtrl: AlertController, private _product_service: ProductService ) 
-  {
-    /** Initialize time countdown */
-    this.currentTime = 60;
-    this.maxTime = 60;
-    this.startTimer();
+  /** constructor */
+  constructor( 
+                private _navController: NavController, 
+                private alertCtrl: AlertController, 
+                private _product_service: ProductService
+              ) {
 
-    /** others */
-    this.timeLeftCircleColor = "orange";
+      /** get products */
+      this.products = this._product_service.getListOfProducts();
 
-    /** get products */
-    this.products = this._product_service.getListOfProducts();
   }
 
-  /** Countdown */
-  startTimer(){
-    setTimeout(x => 
-      {
-          if( this.currentTime > 0 ) {
-            this.currentTime -= 1;
-            this.startTimer();
-          }
-
-          if(this.currentTime < 25) { 
-            this.timeLeftCircleColor = "red"; 
-          }
-
-      }, 1000);
-    }
-
-  licitar(){
-    this.currentTime = 60;
-    this.timeLeftCircleColor = "orange";
-  }
-
-  is_odd(product_id: any){
-    return product_id % 2 == 1;
-  }
-  is_even(product_id: any){
-    return product_id % 2 == 0;
-  }
-
-
+  
+  /** Functions to navagate */
+  /** Settings */
   openSettings(){
-    this._navController.push(SettingsPage);
+     this._navController.push(SettingsPage);
   }
 
-
+  /** Info Product */
   infoProduto(){
-    this._navController.push(ProductDetailPage);
+     this._navController.push(ProductDetailPage);
   }
 
   infoProdutoLast(){
