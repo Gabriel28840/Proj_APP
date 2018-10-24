@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
 
 /** Pages */
-import { ProductDetailPage } from '../../product-detail/product-detail';
+//import { ProductModalPage } from '../../product-detail/product-detail';
 
 /** Models */
 import { ProductModel } from '../../shared/models/product.model';
@@ -27,7 +27,9 @@ export class ProductCard {
     timeLeftCircleColor : any;
 
     /** Initialize Variables */
-    constructor(private _navController: NavController) {
+    constructor(
+              private _modalController: ModalController
+    ) {
       
       /** Initialize time countdown */
       this.currentTime = 60;
@@ -75,13 +77,12 @@ export class ProductCard {
       return this.position_number%2 == 0
     }
 
-    /** Info Product */
-    infoProduto(){
-      this._navController.push(ProductDetailPage, 
-            {
-              product_id: this.product.product_id
-          }
-        );
+    /** Info Product - Description */
+    showDescription(){
+        const myModal = this._modalController.create('ProductDetailModalPage');
+
+        /** Show the modal */
+        myModal.present();
     }
 
 }

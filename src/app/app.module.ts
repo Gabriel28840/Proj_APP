@@ -15,7 +15,7 @@ import { ProductCard } from '../pages/elements/product-card/product-card';
 /** PAGES */
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
-import { ProductDetailPage } from '../pages/product-detail/product-detail';
+import { ProductModalPage } from '../pages/product-detail/product-detail';
 
 /** SERVICES */
 import { HttpManager } from '../pages/shared/http.manager';
@@ -29,7 +29,7 @@ import { ProductDetaiService } from '../pages/shared/services/product-detail.ser
     /** Pages */
     HomePage,
     SettingsPage,
-    ProductDetailPage,
+    ProductModalPage,
     /** Elements */
     CircleElement,
     ProductCard
@@ -50,7 +50,7 @@ import { ProductDetaiService } from '../pages/shared/services/product-detail.ser
     /** Pages */
     HomePage,
     SettingsPage,
-    ProductDetailPage
+    ProductModalPage
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

@@ -25,3 +25,7 @@ https://getbootstrap.com/docs/4.0/layout/grid/
 Nos elementos
 
 # Temos que organizar a estrutura para reutilizar coisas e código ficar mais clear
+
+
+# Modal
+Ver este exemplo: https://www.youtube.com/watch?v=fOINTOJxswg
