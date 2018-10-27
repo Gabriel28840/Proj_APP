@@ -25,3 +25,18 @@
 }*/
 $color_background: #D0E5D1;
 $color_background_header: #C0C0C0;
+
+
+/** Modal Size */
+@media only screen and (orientation: landscape)  {
+  .my-modal {
+   .modal-wrapper {
+     position: absolute;
+     top: 10% !important;
+     left: 10% !important;
+     display: block;
+     width: 80% !important;
+     height: 80% !important;
+   } 
+ }
+}

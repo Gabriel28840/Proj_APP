@@ -7,6 +7,7 @@ import { IonicPage } from 'ionic-angular';
 /** Services */
 import { ProductDetaiService } from '../shared/services/product-detail.service';
 
+/** TO DELETE */
 
 /** Component */
 @Component({

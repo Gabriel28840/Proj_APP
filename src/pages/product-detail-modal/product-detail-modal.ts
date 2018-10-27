@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+
+/** Product Model */
+import { ProductModel } from '../shared/models/product.model';
 
 /**
  * Generated class for the ProductDetailModalPage page.
@@ -15,7 +18,14 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class ProductDetailModalPage {
 
+  /** variables - Product */
+  product: ProductModel;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private _viewController:ViewController) {
+  }
+
+  ionViewWillEnter() {
+    this.product = this.navParams.get('product');
   }
 
   ionViewDidLoad() {

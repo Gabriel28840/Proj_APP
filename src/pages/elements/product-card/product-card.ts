@@ -79,7 +79,13 @@ export class ProductCard {
 
     /** Info Product - Description */
     showDescription(){
-        const myModal = this._modalController.create('ProductDetailModalPage');
+        const myModal = this._modalController.create('ProductDetailModalPage',
+        {
+            product: this.product
+        },
+        {
+          cssClass:"my-modal" 
+        });
 
         /** Show the modal */
         myModal.present();
