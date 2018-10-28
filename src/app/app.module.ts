@@ -62,4 +62,5 @@ import { ProductDetaiService } from '../pages/shared/services/product-detail.ser
     ProductDetaiService
   ]
 })
+
 export class AppModule {}

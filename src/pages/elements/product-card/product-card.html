@@ -16,24 +16,14 @@
 
             </ion-col>
           
-            <ion-col width-33 *ngIf="is_even()">
-                Tempo restante
-                <round-progress style="margin: 90px auto 0 auto;" (click) = "to_bet()" [current]="currentTime"
-                    [radius]="20" [color]="timeLeftCircleColor" 
-                    [stroke]="5" [max]="maxTime"></round-progress>
-                <h2 style="text-align: center;">{{currentTime}}</h2>
-                <!--<circle-element></circle-element>-->
+            <ion-col width-33 *ngIf="is_even()"> 
+                <circle-element [product]="product"></circle-element>
             </ion-col>
 
             <!-- Product Left: is even -->
               
             <ion-col width-33 *ngIf="is_odd()">
-                Tempo restante
-                <round-progress style="margin: 90px auto 0 auto;" (click) = "to_bet()" [current]="currentTime"
-                    [radius]="20" [color]="timeLeftCircleColor" 
-                    [stroke]="5" [max]="maxTime"></round-progress>
-                <h2 style="text-align: center;">{{currentTime}}</h2>
-                <!--<circle-element></circle-element>-->
+                <circle-element [product]="product"></circle-element>
             </ion-col>
 
             <ion-col width-66 *ngIf="is_odd()">

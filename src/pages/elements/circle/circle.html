@@ -1,4 +1,6 @@
-<svg height="100" width="100">
-    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
-</svg>
-Hello! Test!
+<h1>Tempo Restante</h1>
+<round-progress style="margin: 90px auto 0 auto;" (click) = "to_bet()" [current]="currentTime"
+        [radius]="20" [color]="timeLeftCircleColor" 
+        [stroke]="5" [max]="maxTime">
+</round-progress>
+<h2 style="text-align: center;">{{currentTime}}</h2>
