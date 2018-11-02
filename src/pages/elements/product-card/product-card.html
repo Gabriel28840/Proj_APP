@@ -1,7 +1,7 @@
 <ion-grid>
         <ion-row wrap>
 
-          <!-- Product Right: is odd -->
+          <!-- Product Left: is even -->
 
             <ion-col width-66 *ngIf="is_even()">
 
@@ -20,7 +20,7 @@
                 <circle-element [product]="product"></circle-element>
             </ion-col>
 
-            <!-- Product Left: is even -->
+            <!-- Product Right: is odd -->
               
             <ion-col width-33 *ngIf="is_odd()">
                 <circle-element [product]="product"></circle-element>
