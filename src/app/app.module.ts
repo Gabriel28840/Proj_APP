@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { RoundProgressModule } from 'angular-svg-round-progressbar';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
 
 /** Ionic Elements */
 import { StatusBar } from '@ionic-native/status-bar';
@@ -13,6 +14,7 @@ import { CircleElement } from '../pages/elements/circle/circle';
 import { ProductCard } from '../pages/elements/product-card/product-card';
 
 /** PAGES */
+import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { SettingsPage } from '../pages/settings/settings';
 import { ProductModalPage } from '../pages/product-detail/product-detail';
@@ -27,6 +29,7 @@ import { ProductDetaiService } from '../pages/shared/services/product-detail.ser
   declarations: [
     MyApp,
     /** Pages */
+    LoginPage,
     HomePage,
     SettingsPage,
     ProductModalPage,
@@ -35,6 +38,7 @@ import { ProductDetaiService } from '../pages/shared/services/product-detail.ser
     ProductCard
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     RoundProgressModule,
     IonicModule.forRoot(MyApp)
@@ -48,6 +52,7 @@ import { ProductDetaiService } from '../pages/shared/services/product-detail.ser
   entryComponents: [
     MyApp,
     /** Pages */
+    LoginPage,
     HomePage,
     SettingsPage,
     ProductModalPage

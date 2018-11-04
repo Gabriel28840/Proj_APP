@@ -1,0 +1,25 @@
+<ion-content class="login-content" padding>
+  <div class="login-subcontent">
+
+    <div class="login-logo">
+      <img src = {{logoImgPath}} alt="logo image" style="border-radius: 50%;">
+    </div>
+
+    <ion-item class="login-email">
+        <ion-label><ion-icon ios="ios-person" md="md-person" style="color: darkslategray;"></ion-icon></ion-label>
+        <ion-input autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" [(ngModel)]="txtEmail" type="email" placeholder="email" style="border-bottom: none;font-weight: bold;"></ion-input>
+    </ion-item>
+
+    <ion-item  class="login-password">
+        <ion-label><ion-icon ios="ios-lock" md="md-lock" style="color: darkslategray;"></ion-icon></ion-label>
+        <ion-input [(ngModel)]="txtPassword" type="password" placeholder="password" style="font-weight: bold;"></ion-input>
+    </ion-item>    
+    
+    <button (click) = 'chamadaWebService();' class="login-btn" ion-button block>login</button>
+
+    <p class="login-link">
+      <a href="https://www.w3schools.com/html/">Esqueceu a palavra-passe?</a>
+    </p>
+
+  </div>
+</ion-content>
